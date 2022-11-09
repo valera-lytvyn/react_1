@@ -1,0 +1,30 @@
+.dialogs{
+   background: rgb(238, 200, 203);
+   flex: 1;
+   font-style: italic;
+   font-size: 25px;
+   line-height: 36px;
+   color: rgb(127, 151, 151);
+   display:flex;
+
+   .dialogsItem{
+width: 30%;
+border: 2px solid red;
+flex: 1;
+padding: 10px;
+
+      // .dialog{
+
+      // }
+   }
+
+   .messages{
+      width: 70%;
+      border: 2px solid rgb(140, 0, 255);
+      padding: 10px;
+
+      // .message{
+
+      // }
+   }
+}

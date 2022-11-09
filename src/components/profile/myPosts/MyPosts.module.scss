@@ -1,0 +1,28 @@
+.myPosts{
+   padding-left: 10px;
+
+.wrapTextarea{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin: 10px 0px;
+
+   .textarea{
+   width: 250px;
+   height: 150px;
+   background: rgb(238, 238, 238) ;
+   }
+
+   .button{
+      margin: 10px 0px;
+      min-width: 150px;
+      height: 50px;
+      background-color: rgba(251, 255, 0, 0.918);
+      border:  2px solid rgb(0, 0, 0);
+border-radius: 5px;
+text-transform: uppercase;
+font-size: 26px;
+line-height: 50px;
+   }
+}
+}
