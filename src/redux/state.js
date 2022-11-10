@@ -11,6 +11,10 @@ let store = {
       newPostText: "dsk",
     },
 
+    _callSubscriber() {
+      console.log("rerend");
+    },
+
     dialogsPage: {
       messages: [
         { id: 1, message: "Hi" },
@@ -29,32 +33,31 @@ let store = {
       ],
     },
   },
-  _callSubscriber() {
-    console.log("rerend");
-  },
 
   getState() {
     return this._state;
   },
-
-  addPost() {
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0,
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = "";
-    this._state._callSubscriber();
-  },
-
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._state._callSubscriber();
-  },
-
   subscribe(observer) {
     this._state._callSubscriber = observer;
+  },
+
+
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0,
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = "";
+      this._state._callSubscriber();
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText;
+      this._state._callSubscriber();
+    }
+
   },
 };
 
