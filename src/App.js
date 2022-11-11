@@ -9,6 +9,7 @@ import Settings from "./components/settings/Settings";
 import { Route, Routes } from "react-router-dom";
 
 function App(props) {
+ 
   return (
     <div className={style.App}>
       <Header />
@@ -19,14 +20,15 @@ function App(props) {
             path="/profile"
             element={
               <Profile
-                state={props.state.profilePage}
+                state={props.state.profileReducer}
                 dispatch ={props.dispatch}
                               />
             }
           />
           <Route
             path="/dialogs"
-            element={<Dialogs store={props.store} />}
+            element={<Dialogs state={props.state.dialogsReducer}
+            dispatch ={props.dispatch}/>}
           />
 
           <Route path="/news" element={<News />} />
