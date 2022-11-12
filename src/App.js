@@ -1,5 +1,5 @@
 import style from "./App.module.scss";
-import Dialogs from "./components/dialogs/Dialogs";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
 import Profile from "./components/profile/Profile";
@@ -20,15 +20,20 @@ function App(props) {
             path="/profile"
             element={
               <Profile
-                state={props.state.profileReducer}
-                dispatch ={props.dispatch}
+                // state={props.state.profileReducer}
+                // dispatch ={props.dispatch}
+                store={props.store}
                               />
             }
           />
           <Route
             path="/dialogs"
-            element={<Dialogs state={props.state.dialogsReducer}
-            dispatch ={props.dispatch}/>}
+            element={<DialogsContainer
+              // state={props.state.dialogsReducer}
+              // dispatch={props.dispatch}
+              store={props.store}
+            />}
+            
           />
 
           <Route path="/news" element={<News />} />
