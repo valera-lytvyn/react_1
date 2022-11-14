@@ -9,10 +9,10 @@ import React from "react";
 const Dialogs = (props) => {
 
   let dialogsElements = props.dialogs.map((item) => (
-    <DialogItem name={item.name} id={item.id} />
+    <DialogItem name={item.name} id={item.id} key={item.id}/>
   ));
   let messagesElements = props.messages.map((item) => (
-    <Message message={item.message} />
+    <Message message={item.message} key={item.id} />
   ));
   let newMessageBody = props.newMessageBody;
 

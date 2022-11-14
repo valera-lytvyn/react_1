@@ -22,7 +22,7 @@ function App(props) {
               <Profile
                 // state={props.state.profileReducer}
                 // dispatch ={props.dispatch}
-                store={props.store}
+                // store={props.store}
                               />
             }
           />
@@ -31,7 +31,7 @@ function App(props) {
             element={<DialogsContainer
               // state={props.state.dialogsReducer}
               // dispatch={props.dispatch}
-              store={props.store}
+              // store={props.store}
             />}
             
           />
