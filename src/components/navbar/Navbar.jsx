@@ -9,27 +9,32 @@ const Navbar = () => {
       <div className={style.item}>
         <NavLink to="/profile">
           Profile
-        </NavLink>{" "}
+        </NavLink>
       </div>
       <div className={style.item}>
         <NavLink to="/dialogs">
           Dialogs
-        </NavLink>{" "}
+        </NavLink>
       </div>
       <div className={style.item}>
         <NavLink to="/news">
           News
-        </NavLink>{" "}
+        </NavLink>
       </div>
       <div className={style.item}>
         <NavLink to="/music">
           Music
-        </NavLink>{" "}
+        </NavLink>
       </div>
       <div className={style.item}>
         <NavLink to="/settings">
           Settings
-        </NavLink>{" "}
+        </NavLink>
+      </div>
+      <div className={style.item}>
+        <NavLink to="/users">
+          Users
+        </NavLink>
       </div>
       <div className={style.friends}>
         <Friends />

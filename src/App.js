@@ -6,12 +6,12 @@ import Profile from "./components/profile/Profile";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/settings/Settings";
+import UsersContainer from "./components/users/UsersContainer";
 import { Route, Routes } from "react-router-dom";
 
 function App(props) {
- 
   return (
-    <div className={style.App}>
+        <div className={style.App}>
       <Header />
       <div className={style.body}>
         <Navbar />
@@ -19,21 +19,18 @@ function App(props) {
           <Route
             path="/profile"
             element={
-              <Profile
-                // state={props.state.profileReducer}
-                // dispatch ={props.dispatch}
-                // store={props.store}
-                              />
+              <Profile />
             }
           />
           <Route
             path="/dialogs"
-            element={<DialogsContainer
-              // state={props.state.dialogsReducer}
-              // dispatch={props.dispatch}
-              // store={props.store}
-            />}
-            
+            element={
+              <DialogsContainer />}
+          />
+           <Route
+            path="/users"
+            element={
+              <UsersContainer />}
           />
 
           <Route path="/news" element={<News />} />
