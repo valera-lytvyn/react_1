@@ -4,7 +4,11 @@ const SET_USERS ="SET-USERS"
 
 let initialState = {
    users: [],
+   pageSize: 5,
+   totalUsersCount: 20,
+   currentPage:1,
 };
+
 const usersReducer = (state = initialState, action) => {
       switch (action.type) {
       case ADD_FRIEND:
@@ -12,7 +16,7 @@ const usersReducer = (state = initialState, action) => {
             ...state,
             users: state.users.map(u => {
                if (u.id === action.userId) {
-                  return {...u, friend: true}
+                  return {...u, followed: true}
                }
                return u
             })
@@ -22,7 +26,7 @@ const usersReducer = (state = initialState, action) => {
             ...state,
             users: state.users.map(u => {
                if (u.id === action.userId) {
-                  return {...u, friend: false}
+                  return {...u, followed: false}
                }
                return u
             })

@@ -1,11 +1,14 @@
 import { connect } from "react-redux";
 import { addFriendAC, removeFriendAC, setUsersAC } from "./../../redux/usersReducer";
-import Users from "./Users";
+import Users from "./Usersss";
 
 
 let mapStateToProps = (state) => {
   return {
-      users: state.usersReducer.users
+     users: state.usersReducer.users,
+     pageSize: state.usersReducer.pageSize,
+     totalUsersCount: state.usersReducer.totalUsersCount,
+     currentPage: state.usersReducer.currentPage,
    }
 };
 
