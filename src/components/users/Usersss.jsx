@@ -6,17 +6,33 @@ import axios from 'axios';
 
 const Users = (props) => {
 
-   if (props.users.length === 0) {
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users`)
-         .then(response => {
-            props.setUsers(response.data.items)
-         })
-   }
+   // if (props.users.length === 0) {
+   //    axios.get(`https://social-network.samuraijs.com/api/1.0/users`)
+   //       .then(response => {
+   //          props.setUsers(response.data.items)
+   //       })
+   // }
 
-   return (
-      <div className={style.users}>
+   render()  
+      let pageCount = this.props.totalUsersCount / this.props.pageSize
+      let pages = [];
+      for (let i = 1; i <= pageCount; i++){
+         pages.push();
+      }
+      
+      return (
+         <div className={style.users}>
+            <div>
+               {this.page.map(p => {
+                  return (
+                     <span className={currentPage = p && style.selectedPage}> {p} </span>
+                  )
+               })
+               }
+            </div>
+          
          {
-            props.users.map(u =>
+            this.props.users.map(u =>
                <div key={u.id}>
                   <span>
                      <div>
@@ -24,8 +40,8 @@ const Users = (props) => {
                      </div>
                      <div>
                         {u.followed
-                           ? <button onClick={() => { props.removeFriend(u.id) }}>unfollow</button>
-                           : <button onClick={() => { props.addFriend(u.id) }}>follow</button>}
+                           ? <button onClick={() => { this.props.removeFriend(u.id) }}>unfollow</button>
+                           : <button onClick={() => { this.props.addFriend(u.id) }}>follow</button>}
                      </div>
                   </span>
                   <span>
@@ -42,7 +58,7 @@ const Users = (props) => {
             )
          }
       </div>
-   )
-}
+      );
+   }
 
 export default Users;
