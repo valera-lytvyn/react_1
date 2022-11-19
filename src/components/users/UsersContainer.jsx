@@ -3,15 +3,15 @@ import {
    addFriendAC, removeFriendAC, setUsersAC,
    setCurrentPageAC, setTotalUsersCountAC
 } from "./../../redux/usersReducer";
-import Users from "./Users";
+import UsersAPI from "./UsersAPI";
 
 
 let mapStateToProps = (state) => {
-  return {
-     users: state.usersReducer.users,
-     pageSize: state.usersReducer.pageSize,
-     totalUsersCount: state.usersReducer.totalUsersCount,
-     currentPage: state.usersReducer.currentPage,
+   return {
+      users: state.usersReducer.users,
+      pageSize: state.usersReducer.pageSize,
+      totalUsersCount: state.usersReducer.totalUsersCount,
+      currentPage: state.usersReducer.currentPage,
    }
 };
 
@@ -35,6 +35,6 @@ let mapDispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersAPI);
 
 
