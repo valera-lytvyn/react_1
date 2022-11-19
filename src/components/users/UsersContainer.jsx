@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import {
-   addFriendAC, removeFriendAC, setUsersAC,
-   setCurrentPageAC, setTotalUsersCountAC, ToggleIsFetchingAC
+   addFriend, removeFriend, setUsers,
+   setCurrentPage, setTotalUsersCount, toggleIsFetching
 } from "./../../redux/usersReducer";
 import axios from 'axios';
 import Users from './Users';
@@ -60,29 +60,36 @@ let mapStateToProps = (state) => {
    }
 };
 
-let mapDispatchToProps = (dispatch) => {
-   return {
-      addFriend: (userId) => {
-         dispatch(addFriendAC(userId))
-      },
-      removeFriend: (userId) => {
-         dispatch(removeFriendAC(userId))
-      },
-      setUsers: (users) => {
-         dispatch(setUsersAC(users))
-      },
-      setCurrentPage: (pageNumber) => {
-         dispatch(setCurrentPageAC(pageNumber))
-      },
-      setTotalUsersCount: (totalCount) => {
-         dispatch(setTotalUsersCountAC(totalCount))
-      },
-      toggleIsFetching: (isFetching) => {
-         dispatch(ToggleIsFetchingAC(isFetching))
-      }
-   }
-};
+// let mapDispatchToProps = (dispatch) => {
+//    return {
+//       addFriend: (userId) => {
+//          dispatch(addFriend(userId))
+//       },
+//       removeFriend: (userId) => {
+//          dispatch(removeFriend(userId))
+//       },
+//       setUsers: (users) => {
+//          dispatch(setUsers(users))
+//       },
+//       setCurrentPage: (pageNumber) => {
+//          dispatch(setCurrentPage(pageNumber))
+//       },
+//       setTotalUsersCount: (totalCount) => {
+//          dispatch(setTotalUsersCount(totalCount))
+//       },
+//       toggleIsFetching: (isFetching) => {
+//          dispatch(ToggleIsFetching(isFetching))
+//       }
+//    }
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+   addFriend,
+   removeFriend,
+   setUsers,
+   setCurrentPage,
+   setTotalUsersCount,
+   toggleIsFetching,
+})(UsersContainer);
 
 

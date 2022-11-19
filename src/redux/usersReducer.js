@@ -158,11 +158,11 @@ const usersReducer = (state = initialState, action) => {
   }
 }
 
-export const addFriendAC = (userId) => ({ type: ADD_FRIEND, userId });
-export const removeFriendAC = (userId) => ({ type: REMOVE_FRIEND, userId });
-export const setUsersAC = (users) => ({ type: SET_USERS, users });
-export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
-export const setTotalUsersCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, totalCount: totalUsersCount });
-export const ToggleIsFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
+export const addFriend = (userId) => ({ type: ADD_FRIEND, userId });
+export const removeFriend = (userId) => ({ type: REMOVE_FRIEND, userId });
+export const setUsers = (users) => ({ type: SET_USERS, users });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, totalCount: totalUsersCount });
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
 
 export default usersReducer;
