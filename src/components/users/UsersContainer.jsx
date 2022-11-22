@@ -60,28 +60,6 @@ let mapStateToProps = (state) => {
    }
 };
 
-// let mapDispatchToProps = (dispatch) => {
-//    return {
-//       addFriend: (userId) => {
-//          dispatch(addFriend(userId))
-//       },
-//       removeFriend: (userId) => {
-//          dispatch(removeFriend(userId))
-//       },
-//       setUsers: (users) => {
-//          dispatch(setUsers(users))
-//       },
-//       setCurrentPage: (pageNumber) => {
-//          dispatch(setCurrentPage(pageNumber))
-//       },
-//       setTotalUsersCount: (totalCount) => {
-//          dispatch(setTotalUsersCount(totalCount))
-//       },
-//       toggleIsFetching: (isFetching) => {
-//          dispatch(ToggleIsFetching(isFetching))
-//       }
-//    }
-// };
 
 export default connect(mapStateToProps, {
    addFriend,

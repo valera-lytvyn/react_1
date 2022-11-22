@@ -3,8 +3,7 @@ import React from 'react';
 
 
 const Preloader = (props) => {
-   // debugger;
-   return (
+      return (
       <div>
              <img src={preloader} alt='preloader' /> 
    </div>
